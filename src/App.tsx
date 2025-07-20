@@ -1,31 +1,37 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState }  from 'react';
 import './App.css';
-interface User {
-  id:number;
-  name:string;
-}
+import Users from './components/users/Users';
+import { IUser } from './models/IUserModel';
+import { ITodo } from './models/ITodoModel';
+import { getTodos } from './services/api.service';
+
 
 
 function App() {
 
-let [users ,setUsers] = useState<User[]>([])
- useEffect(() => {
- fetch('https://jsonplaceholder.typicode.com/users')
- .then(value =>value.json())
- .then(response =>{
-  setUsers(response);
- 
- 
- })
- },[])
+  
+  const [todos,setTodos] =useState<ITodo[]>([]);
+
+
+  const lift =(user:IUser) =>{
+getTodos(user)
+         .then((response:ITodo[]) =>{
+        setTodos(response)
+         })
+  }
+
 
 
   return (
     <div>
+     
+     <hr />
+     {
+      todos.map((todo:ITodo) => <div key={todo.id}>{todo.title}</div>)
+     }
+     <hr />
+   <Users lift ={lift}/>
    
-   {
-    users.map(user =><div key={user.id}>{user.name}</div>)
-   }
     
     </div>
   );
