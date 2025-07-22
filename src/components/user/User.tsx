@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import { IUser } from '../../models/IUserModel'
+import styles from './User.module.css'
  type IUserProps ={
   user:IUser
   lift:(user:IUser)=>void
@@ -8,7 +9,7 @@ import { IUser } from '../../models/IUserModel'
 const User:FC<IUserProps> = ({user,lift}) => {
   return (
 
-    <div key={user.id}>
+    <div className={styles.user} key={user.id}>
 
         <ul>
             <li>name:{user.name}</li>
