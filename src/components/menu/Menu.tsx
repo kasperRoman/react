@@ -9,10 +9,10 @@ const Menu = () => {
                 <Link to ='/'>Home</Link>
             </li>
             <li>
-                <Link to ='page1'>Page1</Link>
+                <Link to ='Movies'>Movies</Link>
             </li>
             <li>
-                <Link to ='page2'>Page2</Link>
+                <Link to ='TvSeries'>TV Series</Link>
             </li>
         </ul>
         </div>
