@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom'
 
 const Menu = () => {
   return (
-    <div><ul className={styles.menu}>
+    <div>
+        <ul className={styles.menu}>
             <li>
-                <Link to ='/'>Home</Link>
+                <Link to ='/' className={styles.link}>Home</Link>
             </li>
             <li>
                 <Link to ='Movies'>Movies</Link>
