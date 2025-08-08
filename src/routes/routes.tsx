@@ -13,4 +13,6 @@ export const routes = createBrowserRouter([
        {path:'movieDetailsPage/:id',element:<MovieDetailsPage/>}
     ]}
 
-]);
+],{
+    basename:'/react'
+});
