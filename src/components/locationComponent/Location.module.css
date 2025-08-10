@@ -1,0 +1,62 @@
+.container {
+  padding: 40px 125px;
+}
+
+.heading {
+  
+  font-size: 70px;
+  line-height: 98px;
+  color: rgb(255, 255, 255);
+}
+
+.heading::after {
+  content: '↘';
+  margin-left: -10px;
+  font-size: 70px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+}
+
+.card {
+    cursor: pointer;
+  position: relative;
+  min-height: 280px;
+  background-size: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background-size 0.6s ease-in-out ,  background-position 0.6s ease-in-out;
+}
+.card:hover{
+    background-size: 110%;
+     background-position: center center;
+}
+
+.overlay {
+  position: absolute;
+  bottom: -20px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  transition:  0.5s ease;
+  
+}
+
+.card:hover .overlay {
+  background: rgba(0, 0, 0, 0.9); /* темніє тільки текстова зона */
+}
+
+.cardTitle {
+  color: #fff;
+  font-size: 32px;
+  line-height: 48px;
+text-transform: uppercase;
+padding-left: 10px;
+}
+
+
+
+
